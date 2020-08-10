@@ -1,6 +1,6 @@
 # DejaVu installer for magisk
 
-Just install DejaVu as system-less app
+Just install [DejaVu 1.1.12](https://f-droid.org/en/packages/org.fitchfamily.android.dejavu/) as system-less app
 
 ## How to make magisk module:
 - Clone repo (or download as zip)
