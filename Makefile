@@ -1,13 +1,14 @@
-make_magisk_module: 
-	zip -r dejavu_installer.zip \
-	META-INF \
-    LICENSE \
-	README.md \
-	module.prop \
-	system
+magiskModuleName = $(shell basename `pwd`)
 
-push:
-	adb push dejavu_installer.zip /sdcard/
+all: clean make-magisk-module adb-push
+.PHONY: all
+
+make-magisk-module: 
+	zip -r ${magiskModuleName}.zip ./* --exclude .gitignore Makefile \*.zip .git/
+
+adb-push:
+	adb push ${magiskModuleName}.zip /sdcard/magiskModules/
 
 clean: 
-	rm dejavu_installer.zip
+	rm ${magiskModuleName}.zip
+
